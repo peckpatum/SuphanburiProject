@@ -23,22 +23,46 @@
 			});
 		});
 	</script>
+	
+	
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('#slideshow').nivoSlider({
+				directionNav: false
+			});
+		});
+	</script>
+<script>
+var xmlhttp = new XMLHttpRequest();//สร้าง object
+xmlhttp.onreadystatechange=function(){ //จับ event พอเกิด event ให้เรียก functionไม่มีชื่อ
+if(xmlhttp.readyState==4 && xmlhttp.status==200){
+document.getElementById("result").innerHTML = xmlhttp.responseText;//ใช่ domเข้าถึง <div>ผ่าน ID=resultโดยต้องการเปลี่ยนค่าที่ <div>
+}
+}
+var url = "loadtxt.jsp";
+//เปิด connection
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+
+</script>
+
+
 </head>
 <body bgcolor="#FFFFCC">
 
 <div align="center">
   <table width="1024" border="0">
     <tr>
-      <td><img src="logo.png" width="1024" height="150" alt=""/></td>
+      <td><img src="images/logo.png" width="1024" height="150" alt=""/></td>
     </tr>
     
     <tr>
-   <td><a href="index.jsp" ><img src="btn1.png" width="170" height="30" alt=""/></a>
-   <a href="index.jsp" ><img src="btn2.png" width="150" height="30" alt=""/></a>
-   <a href="index.jsp" ><img src="btn3.png" width="150" height="30" alt=""/></a>
-   <a href="index.jsp" ><img src="btn4.png" width="150" height="30" alt=""/></a>
-   <a href="index.jsp" ><img src="btn5.png" width="150" height="30" alt=""/></a>
-   <a href="PeckMean.jsp" ><img src="btn7.jpg" width="150" height="30" alt=""/></a></td>
+   <td><a href="index.jsp" ><img src="images/Button/btn1.png" width="170" height="30" alt=""/></a>
+   <a href="index.jsp" ><img src="images/Button/btn2.png" width="150" height="30" alt=""/></a>
+   <a href="index.jsp" ><img src="images/Button/btn3.png" width="150" height="30" alt=""/></a>
+   <a href="index.jsp" ><img src="images/Button/btn4.png" width="150" height="30" alt=""/></a>
+   <a href="index.jsp" ><img src="images/Button/btn5.png" width="150" height="30" alt=""/></a>
+   <a href="PeckMean.jsp" ><img src="images/Button/btn7.jpg" width="150" height="30" alt=""/></a></td>
    </tr>
     
 
@@ -56,13 +80,12 @@
     <td>
     <h3 align = 'center'>
   <div id="slideshow">
-			<img src="sp1.jpg"alt="Slideshow Image" />
-			<img src="sp2.jpg"alt="Slideshow Image" />
-			<img src="sp3.jpg"alt="Sl
-			ideshow Image" />
-			<img src="sp4.jpg"alt="Slideshow Image" />
-			<img src="sp5.jpg"alt="Slideshow Image" />
-			<img src="sp6.JPG"alt="Slideshow Image" />
+			<img src="images/Slideshow/sp1.jpg"alt="Slideshow Image" />
+			<img src="images/Slideshow/sp2.jpg"alt="Slideshow Image" />
+			<img src="images/Slideshow/sp3.jpg"alt="Slideshow Image" />
+			<img src="images/Slideshow/sp4.jpg"alt="Slideshow Image" />
+			<img src="images/Slideshow/sp5.jpg"alt="Slideshow Image" />
+			<img src="images/Slideshow/sp6.JPG"alt="Slideshow Image" />
 		</div><!-- // end #slideshow -->
 		</h3>
 		</td>
@@ -92,6 +115,8 @@
           </li>
     
       </ul>
+      
+      <marquee behavior="scroll" scrolldelay="100"><div id="result"></div></marquee>
 
 </table>
 </div>
