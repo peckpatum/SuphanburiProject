@@ -1,2 +1,3 @@
 # Module suphanburiproject
 # RPC service class, partial path of RPC policy file
+th.ac.utcc.suphanburiproject.client.GreetingService, 73604B4CA6E9824F8FF9A2E984A1734F.gwt.rpc

@@ -109,8 +109,9 @@ xmlhttp.send();
 				<% } else { %>  	
           <% out.println(username_sess); %><a href="SPlogout.jsp">ออกจากระบบ</a>
  		<% } %>
-				
-				
+			
+			
+		
             </div>
           </li>
     
@@ -120,5 +121,29 @@ xmlhttp.send();
 
 </table>
 </div>
+
+			<h2>แนะนำสถานที่ท่องเที่ยว</h2>
+<div id="SPplace"></div>
+
+</div>	
+
+		<script>
+$(document).ready(function(){
+var data = '{"location":['+
+'{"SPname":"ตลาดเก่าร้อยปีสามชุก","SPpic":"spb1.jpg","SPdetail":"ถวิลหาอดีตความทรงจำ ที่ตลาดแห่งนี้เคยเนืองแน่นด้วยผู้คน แต่ยังคงเสน่ห์ของคนสุพรรณบุรี พ่อค้าแม่ขายใจดี ของกินชิมฟรีได้ทั้งตลาด" },'+
+'{"SPname":"อนุสรณ์ดอนเจดีย์","SPpic":"spb2.jpg","SPdetail":"กราบไหว้พระบรมราชานุสรณ์สมเด็จพระนเรศรทรงยุทธหัตถีบนหลังช้าง เป็นเคารพนับถือของปวงชนชาวไทย ผ่านไปมาดอนเจดีย์ อย่าลืมไปเยี่ยมชม กราบไหว้เพื่อเป็นสิริมงคลกัน" },'+
+'{"SPname":"อุทยานมังกรสวรรค์","SPpic":"spb3.jpg","SPdetail":"ณ ศาลหลักเมืองสุพรรณบุรี ชมมังกรสวรรค์ยามพลบค่ำ กลายแสงเป็นสีทองเหลืองอร่าม สวยสง่างามต้องบอกต่อ" },'+
+'{"SPname":"พิพิธภัณฑ์บ้านควายไทย","SPpic":"spb4.jpg","SPdetail":"ชมวิถีของแผ่นดินไทย บรรยากาศภาพเก่าๆ ความทรงจำในอดีต ของไอ้ทุยเพื่อนยากไถนา การดำนา ลงแขกเกี่ยวข้าวด้วยมือ ที่ชักจะเลือนลางจางหายไปจากวิถีชีวิตคนไทยจนจะกลายเป็นอดีตไปแล้ว แต่กลับหาชมได้ที่นี่" }]}';
+	var obj = eval ("("+data+")");
+	for (var i = 0;i<obj.location.length;i++){
+		$("#SPplace").append("<div><h4>"+obj.location[i].SPname+"</h4></div>");
+		$("#SPplace").append("<div><img src=\"images/"+obj.location[i].SPpic+"\" width=\"700px;\" height=\"500px;\"><br><br>");		
+		$("#SPplace").append("<div>"+obj.location[i].SPdetail+"</div>");
+		$("#SPplace").append("<br><br></div>");
+	
+	}//forloop	
+});//document-ready block
+</script>
+
 </body>
 </html>
